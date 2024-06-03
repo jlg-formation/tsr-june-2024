@@ -6,8 +6,8 @@ const r = 45;
 
 const svgns = "http://www.w3.org/2000/svg";
 
-const samples = 10;
-const multiplicationFactor = 2;
+const samples = 300;
+const multiplicationFactor = 29;
 
 const container = document.querySelector("g.samples");
 if (container === null) {
