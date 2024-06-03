@@ -15,4 +15,11 @@ svg {
       stroke: transparent;
     }
   }
+
+  .lines {
+    line {
+      stroke: black;
+      stroke-width: 0.02em;
+    }
+  }
 }

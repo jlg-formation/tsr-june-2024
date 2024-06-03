@@ -43,8 +43,8 @@ for (let i = 0; i < samples; i++) {
   const y2 = cy0 + r * Math.sin(angle2);
 
   line.setAttributeNS(null, "x1", x1 + "");
-  line.setAttributeNS(null, "y1", x2 + "");
-  line.setAttributeNS(null, "x2", y1 + "");
+  line.setAttributeNS(null, "x2", x2 + "");
+  line.setAttributeNS(null, "y1", y1 + "");
   line.setAttributeNS(null, "y2", y2 + "");
   lineContainer.appendChild(line);
 }
