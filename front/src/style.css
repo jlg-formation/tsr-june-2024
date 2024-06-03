@@ -8,4 +8,11 @@ svg {
     stroke-width: 0.02em;
     fill: transparent;
   }
+
+  .samples {
+    circle {
+      fill: black;
+      stroke: transparent;
+    }
+  }
 }
