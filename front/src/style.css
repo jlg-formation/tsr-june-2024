@@ -1,25 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color: black;
+}
+
+body {
+  font-family: sans-serif;
+}
+
 svg {
   width: 50em;
   height: 25em;
-  border: 0.1em solid black;
+  border: 0.1em solid var(--color);
 
   circle {
-    stroke: black;
+    stroke: var(--color);
     stroke-width: 0.02em;
     fill: transparent;
   }
 
   .samples {
     circle {
-      fill: black;
+      fill: var(--color);
       stroke: transparent;
     }
   }
 
   .lines {
     line {
-      stroke: black;
+      stroke: var(--color);
       stroke-width: 0.02em;
+    }
+  }
+}
+
+div.command {
+  border: 0.1em solid var(--color);
+  width: 50em;
+  padding: 0.5em;
+
+  display: flex;
+  flex-flow: column;
+  gap: 0.5em;
+
+  label {
+    display: flex;
+    flex-flow: column;
+
+    .value {
+      font-weight: bold;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-evenly;
+    button {
+      padding: 0.5em 1em;
+      cursor: pointer;
     }
   }
 }
