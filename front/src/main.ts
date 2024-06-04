@@ -5,7 +5,7 @@ import "./style.css";
 
 const config: BoardConfig = {
   samples: 300,
-  multiplicationFactor: 34,
+  multiplicationFactor: 56,
 };
 
 const board = new Board();
