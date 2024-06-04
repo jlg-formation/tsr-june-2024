@@ -1,19 +1,6 @@
 // @ts-nocheck
 const fs = require("node:fs");
-
-const promisify =
-  (func) =>
-  (...args) => {
-    return new Promise((resolve, reject) => {
-      func(...args, (err, result) => {
-        if (err) {
-          reject(err);
-          return;
-        }
-        resolve(result);
-      });
-    });
-  };
+const { promisify } = require("util");
 
 const readdir = promisify(fs.readdir);
 const readFile = promisify(fs.readFile);
