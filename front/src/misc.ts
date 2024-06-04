@@ -1,14 +1,25 @@
+type Class<T> = new () => T;
+
 /**
  * Find an element from a selector or throw an error
  * @param selector
  * @returns the element if found
  */
-export const querySelector = (selector: string): Element => {
+export const querySelector = <T extends HTMLElement>(
+  selector: string,
+  type?: Class<T>
+): T => {
   const elt = document.querySelector(selector);
   if (elt === null) {
     throw new Error(`Cannot find element with selector ${selector}`);
   }
-  return elt;
+  elt;
+  if (type) {
+    if (!(elt instanceof type)) {
+      throw new Error(`Element found, but type is not ${type}`);
+    }
+  }
+  return elt as T;
 };
 
 export const setAttribute = (

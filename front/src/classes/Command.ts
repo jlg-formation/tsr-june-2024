@@ -12,6 +12,7 @@ export class Command {
 
   constructor() {
     this.render();
+    this.setActions();
   }
 
   onChange(callback: Callback) {
@@ -23,14 +24,30 @@ export class Command {
     for (const key of keys) {
       querySelector(`div.command label.${key} .value`).innerHTML =
         this.config[key] + "";
-      (
-        querySelector(`div.command label.${key} input`) as HTMLInputElement
-      ).value = this.config[key] + "";
+      querySelector(`div.command label.${key} input`, HTMLInputElement).value =
+        this.config[key] + "";
+    }
+  }
+
+  setActions() {
+    const keys = getKeys(this.config);
+    for (const key of keys) {
+      const slider = querySelector(
+        `div.command label.${key} input`,
+        HTMLInputElement
+      );
+      slider.addEventListener("input", () => {
+        this.setConfig({
+          ...this.config,
+          [key]: Number(slider.value),
+        });
+      });
     }
   }
 
   setConfig(config: BoardConfig) {
     this.config = config;
     this.render();
+    this.callback(this.config);
   }
 }
