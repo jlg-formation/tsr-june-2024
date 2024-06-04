@@ -1,4 +1,4 @@
-import { increment, multiplicationFactorMax } from "../constants";
+import { increment, multiplicationFactorMax, url } from "../constants";
 import { BoardConfig } from "../interfaces/BoardConfig";
 import { getKeys, querySelector, sleep } from "../misc";
 
@@ -71,6 +71,17 @@ export class Command {
       if (this.isPlaying) {
         this.play();
       }
+    });
+
+    const randomBtn = querySelector(
+      "div.command button.random",
+      HTMLButtonElement
+    );
+    randomBtn.addEventListener("click", async () => {
+      console.log("click random");
+      const response = await fetch(url);
+      const config: BoardConfig = await response.json();
+      this.setConfig(config);
     });
   }
 
