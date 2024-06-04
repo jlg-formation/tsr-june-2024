@@ -18,3 +18,7 @@ export const setAttribute = (
 ): void => {
   elt.setAttributeNS(null, attributeName, attributeValue + "");
 };
+
+export const getKeys = <Truc extends object>(o: Truc): (keyof Truc)[] => {
+  return Object.keys(o) as (keyof Truc)[];
+};
