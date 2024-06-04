@@ -6,7 +6,7 @@ const app = express.Router();
 
 app.get('/random', (req, res) => {
   const config: Config = {
-    samples: random(0, 200),
+    samples: random(0, 500),
     multiplicationFactor: random(0, 100, 2),
   };
   res.json(config);

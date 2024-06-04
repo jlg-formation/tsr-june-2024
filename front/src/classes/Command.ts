@@ -23,6 +23,9 @@ export class Command {
     for (const key of keys) {
       querySelector(`div.command label.${key} .value`).innerHTML =
         this.config[key] + "";
+      (
+        querySelector(`div.command label.${key} input`) as HTMLInputElement
+      ).value = this.config[key] + "";
     }
   }
 

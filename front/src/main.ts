@@ -4,8 +4,8 @@ import { BoardConfig } from "./interfaces/BoardConfig";
 import "./style.css";
 
 const config: BoardConfig = {
-  samples: 300,
-  multiplicationFactor: 56,
+  samples: 10,
+  multiplicationFactor: 90,
 };
 
 const board = new Board();
