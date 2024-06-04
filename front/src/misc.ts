@@ -33,3 +33,9 @@ export const setAttribute = (
 export const getKeys = <Truc extends object>(o: Truc): (keyof Truc)[] => {
   return Object.keys(o) as (keyof Truc)[];
 };
+
+export const sleep = (delay: number): Promise<void> => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, delay);
+  });
+};
